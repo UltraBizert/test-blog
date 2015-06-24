@@ -4,7 +4,6 @@ Test task for sibers.
 environment:
 -- phpMyAdmin SQL Dump
 -- version 4.0.10deb1
--- http://www.phpmyadmin.net
 --
 -- Хост: localhost
 -- Время создания: Июн 23 2015 г., 14:05
