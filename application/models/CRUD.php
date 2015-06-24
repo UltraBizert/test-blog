@@ -50,7 +50,7 @@ function Update ($header_edit, $message_edit, $id){
 					message = '".$message."'
 					WHERE id = '".$id."'");
 
-	header ('Location:/access');
+	header ('Location:/access/index');
 }
 
 function ADD ($comment, $user_id, $id){
@@ -63,31 +63,31 @@ function ADD ($comment, $user_id, $id){
 	header ('Location:/access');
 }
 
-function GetNav($p, $num_pages){
+function GetNav($p, $num_pages, $controller, $action){
 
 	if($p - 2 > 0){
-		$prev_2_page = ' <a href="/access/index/?page='.($p - 2).'">'.($p - 2).'</a> ';
+		$prev_2_page = ' <a href="/'.$controller.'/'.$action.'/?page='.($p - 2).'">'.($p - 2).'</a> ';
 	}
 	else{
 		$prev_2_page = '';
 	}
 
 	if($p - 1 > 0){
-		$prev_1_page = ' <a href="/access/index/?page='.($p - 1).'"> '.($p - 1).' </a> ';
+		$prev_1_page = ' <a href="/'.$controller.'/'.$action.'/?page='.($p - 1).'"> '.($p - 1).' </a> ';
 	}
 	else{
 		$prev_1_page = '';
 	}
 
 	if($p + 2 <= $num_pages){
-		$next_2_page = ' <a href="/access/index/?page='.($p + 2).'"> '.($p + 2).' </a> ';
+		$next_2_page = ' <a href="/'.$controller.'/'.$action.'/?page='.($p + 2).'"> '.($p + 2).' </a> ';
 	}
 	else{
 		$next_2_page = '';
 	}
 
 	if($p + 1 <= $num_pages){
-		$next_1_page = ' <a href="/access/index/?page='.($p + 1).'">'.($p + 1).'</a> ';
+		$next_1_page = ' <a href="/'.$controller.'/'.$action.'/?page='.($p + 1).'">'.($p + 1).'</a> ';
 	}
 	else{
 		$next_1_page = '';

@@ -1,6 +1,6 @@
 <form action="/access/message" method="POST">
 	<div align="center">
-		<input type="text" name="message_header" placeholder="Message header"
+		<input type="tex	t" name="message_header" placeholder="Message header"
 				value='<?=filter_input(INPUT_POST, 'message_header')?>'><br>
 
 		<textarea cols="55" rows="15" name="message" placeholder="Message">

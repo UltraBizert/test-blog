@@ -12,8 +12,7 @@
 
 	<link href="../../css/blog.css" rel="stylesheet">
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="../../js/blog.js";></script>
 
 </head>
 <body>
@@ -21,9 +20,9 @@
 		<div class="container">
 			<nav class="blog-nav">
 				<a class="blog-nav-item active" href="/">Home</a>
-				<a class="blog-nav-item" href="/">Users</a>
-				<a class="blog-nav-item" href="/access">Posts</a>
-				<a class="blog-nav-item pull-right" href="/login/login_in">Login</a>
+				<a class="blog-nav-item" href="/main/users">Users</a>
+				<a class="blog-nav-item" href="/access/index">Posts</a>
+				<a class="blog-nav-item pull-right" id="login" onclick="login();" href="/login/login_in">Log in</a>
 				<a class="blog-nav-item pull-right" href="/login/registration">Registration</a>
 			</nav>
 		</div>
