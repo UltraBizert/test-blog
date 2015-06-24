@@ -7,6 +7,6 @@
 			<?=htmlspecialchars($_POST['message_edit'])?>
 		</textarea><br>
 
-		<input type="submit" value="edit" name="edit">
+		<input type="submit" value="edit" name="edit_message">
 	</div>
 </form>

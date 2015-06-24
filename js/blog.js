@@ -7,3 +7,4 @@ function login() {
 		document.querySelector('#login').innerHTML = 'Log in';
 	}
 };
+

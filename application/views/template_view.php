@@ -7,13 +7,13 @@
 
 	<title>Blog</title>
 
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 	<link href="../../css/blog.css" rel="stylesheet">
+	<link href="../../js/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
 
 	<script src="../../js/blog.js";></script>
-
+	<script src="../../js/jquery-ui-1.11.4/jquery-ui.min.js";></script>
 </head>
 <body>
 	<div class="blog-masthead">
@@ -22,13 +22,17 @@
 				<a class="blog-nav-item active" href="/">Home</a>
 				<a class="blog-nav-item" href="/main/users">Users</a>
 				<a class="blog-nav-item" href="/access/index">Posts</a>
-				<a class="blog-nav-item pull-right" id="login" onclick="login();" href="/login/login_in">Log in</a>
+				<a class="blog-nav-item pull-right" id="login" 
+					onclick="login();" href="/login/login_in">
+				Log in</a>
 				<a class="blog-nav-item pull-right" href="/login/registration">Registration</a>
 			</nav>
 		</div>
 	</div>
 	<div class="container">
-		<?php include 'application/views/'.$content_view; ?>
+	<br>
+		<?php //if (isset($_SESSION['user_id']) header('/login/login_in');
+		include 'application/views/'.$content_view; ?>
 	</div>
 </body>
 </html>

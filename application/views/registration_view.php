@@ -17,10 +17,11 @@
 	</div>
 	<div class="form-group">
 		<label class="radio-inline">
-			<input type="radio" name="gender" value="male"> male
+			<input type="radio" name="gender" value="male" checked>male
+			<!-- <input type="radio" name="gender" type="checked" value="male"> male -->
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="gender" value="female"> female
+			<input type="radio" name="gender" value="male" checked>female
 		</label>
 	</div>
 	<div class="form-group">

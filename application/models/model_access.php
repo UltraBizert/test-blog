@@ -76,18 +76,19 @@ class model_access extends model {
 			{
 				$_SESSION['magic']=$_POST['user_id'];
 			}
-			Edit($_POST['user_id']);
+			Edit($_SESSION['magic']);
 		}
-		var_dump($_POST);
 
-		if(isset($_POST['edit']))
+		if(isset($_POST['edit_message']))
 		{
 			$header_edit=trim($_POST['header_edit']);
 			$message_edit=trim($_POST['message_edit']);
-
+			
 			if((!empty($header_edit)) and (!empty($message_edit)))
 			{
 				$_SESSION['say']='Message edited';
+				var_dump($_SESSION['message_id']);
+
 				Update($header_edit,$message_edit,$_SESSION['message_id']);
 			}
 			else
@@ -100,14 +101,14 @@ class model_access extends model {
 
 		if(isset($_POST['delete']))
 		{
-			Delete_message($_POST['h']);
+			Delete_message($_POST['user_id']);
 		}
 
 		if(isset($_POST['comment']))
 		{
-			if(isset($_POST['h'])) 
+			if(isset($_POST['user_id'])) 
 			{
-				$_SESSION['message_id']=$_POST['h'];
+				$_SESSION['message_id']=$_POST['user_id'];
 			}
 			include_once 'application/views/add_comment_view.php';
 		}
@@ -135,14 +136,13 @@ class model_access extends model {
 			$result=mysql_query($query);
 			include_once 'application/views/comments_view.php';
 		}
-		var_dump($_SESSION);
+
 		// if(empty($_SESSION['user_id']) $_SESSION['user_id'] = null;
 		$data['p'] = $p;
 		$data['num_pages'] = $num_pages;
 		$data['query'] = $query;
 		$data['result'] = $result;
-		$res = mysql_fetch_array($data['query']);
-		var_dump($res);
+
 		return $data;
 	}
 }

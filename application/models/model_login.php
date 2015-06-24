@@ -78,19 +78,21 @@ class model_login extends model {
 			$gender = htmlspecialchars($_POST['gender']);
 			$birthday = htmlspecialchars($_POST['birthday']);
 
-			$query=mysql_query("SELECT user_login FROM users WHERE user_login='".$login."'");
+			$query=mysql_query("SELECT user_login FROM users 
+										WHERE user_login=`".$login."`");
 
 			if(!preg_match("/^[a-z,A-Z,0-9]+$/", $login))
-				$err[]="логин может быть только из букв латинского алфавита и цифр";
+				$err[]="In your login you can only use A-Z and 0-9 symbols";
 
 			if(strlen($login)<3 or strlen($login)>15)
-				$err[]="логин должен быть меньше 15 символов и больше 3";
+				$err[]="Password must be above 3 symbols and below 15";
+
 
 			if(strlen($_POST['password'])<3 or strlen($_POST['password'])>15)
-				$err[]="пароль должен быть меньше 15 символов и больше 3";
-
-			if(mysql_num_rows($query)!=0)
-				$err[]="пользователь с таким логином уже существует";
+				$err[]="Password must be above 3 symbols and below 15";
+			var_dump($query);
+			if(mysql_num_rows($query)!== fasle)
+				$err[]="This login in use";
 
 			if(count($err)==0)
 			{
@@ -104,8 +106,11 @@ class model_login extends model {
 								";
 				mysql_query($q);
 				$err[]="User ".$login." registrated";
+				header('Location:/main');
 			}
-			return $err;
+
+			$err[]="User ".$login." registrated";
+			header('Location:/main');
 		}
 	}
 }

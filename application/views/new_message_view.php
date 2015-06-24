@@ -6,6 +6,7 @@
 		<textarea cols="55" rows="15" name="message" placeholder="Message">
 			<?=filter_input(INPUT_POST, 'message')?>
 		</textarea><br>
+		tnser
 
 		<input type="submit" value="Save" name="save">
 	</div>

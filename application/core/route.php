@@ -40,12 +40,9 @@ class Route {
 		}
 		else
 		{
-			echo '1';
-
 			$routes = explode('/', $_SERVER['REQUEST_URI']);
-			var_dump($routes[1]);
-			var_dump($routes[2]);
-			//Route::ErrorPage404();
+
+			Route::ErrorPage404();
 			exit();
 		}
 
@@ -58,15 +55,10 @@ class Route {
 		}
 		else
 		{
-			// здесь также разумнее было бы кинуть исключение
-			echo '2';
-
 			$routes = explode('/', $_SERVER['REQUEST_URI']);
-			var_dump($routes[1]);
-			var_dump($routes[2]);
-			// Route::ErrorPage404();
-			exit();
 
+			Route::ErrorPage404();
+			exit();
 		}
 
 	}

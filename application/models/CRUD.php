@@ -37,9 +37,10 @@ function Edit ($id){
 		$_POST['message_edit'] = $result['message'];
 
 	include_once 'application/views/edit_view.php';
+
 }
 
-function Update ($header_edit, $message_edit, $id){
+function Update ($header, $message, $id){
 	$header = htmlspecialchars($header);
 	$header = mysql_real_escape_string($header);
 	$message = htmlspecialchars($message);
