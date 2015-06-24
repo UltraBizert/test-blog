@@ -3,13 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 24 2015 г., 18:29
+-- Время создания: Июн 24 2015 г., 20:33
 -- Версия сервера: 5.5.43-0ubuntu0.14.04.1
 -- Версия PHP: 5.5.9-1ubuntu4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,18 +19,13 @@ SET time_zone = "+00:00";
 --
 -- База данных: `blog`
 --
-CREATE DATABASE IF NOT EXISTS `blog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `blog`;
 
 -- --------------------------------------------------------
 
 --
 -- Структура таблицы `comments`
 --
--- Создание: Июн 24 2015 г., 06:59
---
 
-DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `comment_id` int(5) NOT NULL AUTO_INCREMENT,
   `user_id` int(5) DEFAULT NULL,
@@ -74,10 +67,7 @@ INSERT INTO `comments` (`comment_id`, `user_id`, `message_id`, `comment`) VALUES
 --
 -- Структура таблицы `messages`
 --
--- Создание: Июн 24 2015 г., 07:00
---
 
-DROP TABLE IF EXISTS `messages`;
 CREATE TABLE IF NOT EXISTS `messages` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `user_id` int(5) DEFAULT NULL,
@@ -110,10 +100,7 @@ INSERT INTO `messages` (`id`, `user_id`, `header_message`, `message`) VALUES
 --
 -- Структура таблицы `users`
 --
--- Создание: Июн 24 2015 г., 06:59
---
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(5) NOT NULL AUTO_INCREMENT,
   `user_login` varchar(50) DEFAULT NULL,
@@ -137,7 +124,6 @@ INSERT INTO `users` (`user_id`, `user_login`, `user_password`, `cookie`, `first_
 (11, 'aaaaa', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '', 'aaaaaaaaaaaa', 'vvvvvvvvvvvvvv', 'male', '0000-00-00'),
 (12, '333', '43814346e21444aaf4f70841bf7ed5ae93f55a9d', '', '333', '333', 'female', '0000-00-00'),
 (13, '4444444444444', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '', 'tts', 'neen', 'male', '0000-00-00');
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
