@@ -15,8 +15,11 @@ environment:
 -- Версия PHP: 5.5.9-1ubuntu4.9
 
 Настройки: 
+
   путь до файла с настройками к бд:/application/models/DB_connect.php
+  
   насторойки виртульного хоста:
+  
           <VirtualHost *:80>
         	ServerName test.local
         	DocumentRoot /var/www/html/test-blog/
